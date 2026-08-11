@@ -1,0 +1,83 @@
+{
+  "snapshot_date": "2026-08-08",
+  "sources": {
+    "video-shotcraft": {
+      "display_name": "video-shotcraft",
+      "repository": "https://github.com/Vincentwei1021/video-shotcraft",
+      "branch": "main",
+      "commit": "0022ec45d28800cecb5b16624a3179093c93f4e9",
+      "license": "Apache-2.0",
+      "license_path": "sources/video-shotcraft/LICENSE",
+      "runtime_status": "recipe_and_demo",
+      "compatibility": "Read the recipe, matching demo TSX, and offline MP4 before adapting it into the host Remotion project.",
+      "inventory_expectation": {
+        "recipe_cards": 104,
+        "styles": 161,
+        "offline_previews": 161
+      }
+    },
+    "rve": {
+      "display_name": "RVE Remotion Templates",
+      "repository": "https://github.com/reactvideoeditor/remotion-templates",
+      "branch": "main",
+      "commit": "6209b724798e48ff395f8df1a6fa2d26082372b5",
+      "license": "MIT (declared in upstream README; no standalone LICENSE file in this snapshot)",
+      "license_path": "sources/rve/README.md",
+      "runtime_status": "copy_and_adapt",
+      "compatibility": "Standalone TSX components using standard Remotion hooks; copy the selected file, then reskin and verify against the host Remotion version.",
+      "inventory_expectation": {
+        "templates": 81
+      }
+    },
+    "scenes": {
+      "display_name": "Remotion Scenes",
+      "repository": "https://github.com/lifeprompt-team/remotion-scenes",
+      "branch": "main",
+      "commit": "02c7a84241da7010b5f59c420b0110aafd1d6f0d",
+      "license": "MIT",
+      "license_path": "sources/scenes/LICENSE",
+      "runtime_status": "project_source",
+      "compatibility": "Remotion 4 / React 18 source scenes. Copy the selected scene with its required common utilities; do not import the entire showcase registry into production.",
+      "inventory_expectation": {
+        "scenes": 201
+      }
+    },
+    "curvable": {
+      "display_name": "Curvable Motion",
+      "repository": "https://github.com/Curvable/motion",
+      "branch": "main",
+      "commit": "48aa412b5f4a15d5a31fe02f6e7e43e654ca091a",
+      "license": "MIT",
+      "license_path": "sources/curvable/LICENSE",
+      "runtime_status": "component_library",
+      "compatibility": "Deterministic Remotion components. Some scenes require ogl, @remotion/google-fonts, or CanvasKit; inspect the selected component and vendor only required peers.",
+      "inventory_expectation": {
+        "components": 14
+      }
+    },
+    "playground": {
+      "display_name": "Remotion Playground",
+      "repository": "https://github.com/c0/remotion-playground",
+      "branch": "main",
+      "commit": "b4f60060e9d09e92065bc0cee42653b2d1b278e3",
+      "license": "MIT (declared in package.json and upstream README; no standalone LICENSE file in this snapshot)",
+      "license_path": "sources/playground/README.md",
+      "runtime_status": "legacy_reference",
+      "compatibility": "Legacy Remotion 2.1 / React 17 goo experiments. Port the selected effect to the current project API and test it; never install the vendored lockfile as the production dependency set.",
+      "inventory_expectation": {
+        "effects": 7
+      }
+    }
+  },
+  "vendoring": {
+    "included": "Animation source, reference cards, demos, previews, upstream manifests, and licensing material required to inspect and adapt all five libraries offline.",
+    "excluded": [
+      "node_modules",
+      ".git",
+      ".github",
+      "build outputs",
+      "caches",
+      "upstream agent/plugin wrappers"
+    ]
+  }
+}

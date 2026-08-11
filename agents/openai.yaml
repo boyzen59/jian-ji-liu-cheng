@@ -1,0 +1,5 @@
+interface:
+  display_name: "剪辑流程"
+  short_description: "原文驱动逐镜、详尽素材覆盖、双引擎动效与分段成片流程"
+  brand_color: "#E8734A"
+  default_prompt: "使用 $jian-ji-liu-cheng，按锁定原文执行 video-shotcraft 逐镜分析，生成覆盖量充足的图片与最多250条AI视频需求，并比较 Remotion/HyperFrames 候选完成静音2K60母版。"
